@@ -75,7 +75,7 @@ int mqtt_connect()
     int ret;
     int retries=0;
 
-    printf("Trying to connect... ");
+    printf("Trying to connect..... ");
 
     if(mqtt_conf->user!=NULL && strcmp(mqtt_conf->user, "")!=0)
     {
