@@ -44,7 +44,7 @@ void stop_mqtt(void)
 void mqtt_loop(void)
 {
     if(mosq!=NULL)
-        mosquitto_loop(mosq, -1, 1);
+        mosquitto_loop_start(mosq);
 }
 
 //-----------------------------------------------------------------------------
@@ -107,7 +107,7 @@ int mqtt_connect()
 
     do
     {
-        ret=mosquitto_loop(mosq, -1, 1);
+        ret=mosquitto_loop_start(mosq);
         printf(".");
         retries++;
         if(!is_connected)
